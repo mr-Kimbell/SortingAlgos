@@ -1,0 +1,26 @@
+string frequencySort(string s) {
+        unordered_map<char,int> mp;
+        priority_queue<pair<int,char>> maxh;
+        string ans="";
+        for(auto it:s) mp[it]++;
+        for(auto it1:mp)
+        {
+            maxh.push({it1.second,it1.first});
+        }
+        while(maxh.size()>0)
+        {
+            int x=maxh.top().first;
+            while(x>0)
+            {
+                ans+=maxh.top().second;
+                x--;
+                
+            }
+            maxh.pop();
+            
+        }
+        
+        return ans;
+        
+        
+    }
